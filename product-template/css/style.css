@@ -1,0 +1,319 @@
+/* Box Model Hack */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Clear fix hack */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+nav {
+    background-color: black;
+    color: white;
+    height: 80px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 3.75em;
+}
+
+li a,
+a.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+a.logo {
+    font-size: 2em;
+}
+
+main h1 {
+    text-transform: uppercase;
+    font-size: 3.5em;
+    inline-size: 600px;
+    text-align: center;
+    margin-top: 2.5em;
+}
+
+main>div.container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    border: .25em solid black;
+    width: 100%;
+    margin: 2em 0;
+}
+
+button {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: .5em 1.75em;
+    margin: 3.25em 0;
+    cursor: pointer;
+}
+
+li p+button {
+    padding: 1.25em 3.5em;
+}
+
+main+section {
+    background: black;
+    color: white;
+}
+
+hr.vert {
+    border-color: white;
+    width: 1px;
+    height: 100px;
+    margin: 0;
+}
+
+main+section>h2 {
+    text-transform: uppercase;
+    font-size: 2.75em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+main+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main+section div.container {
+    margin: 4.5em 0;
+    align-items: flex-start;
+    gap: 1em;
+    width: 900px;
+}
+
+main+section div.container>* {
+    flex: 1;
+}
+
+main+section div.container div p {
+    line-height: 1.5em;
+    font-size: 1.4em;
+}
+
+main+section div.container div button {
+    background-color: white;
+    color: black;
+}
+
+section+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section+section>h2 {
+    font-size: 2.75em;
+    text-transform: uppercase;
+    margin-top: 2em;
+    margin-bottom: .75em;
+}
+
+div.container ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10em;
+}
+
+h2+div.container {
+    width: 900px;
+    margin-bottom: 4em;
+}
+
+div.container>ul>li>* {
+    margin: .75em 0;
+}
+
+div.container>ul>li h3 {
+    font-size: 1.5em;
+}
+
+div.container>ul>li button {
+    margin-top: 3em;
+}
+
+section+section+section {
+    background-color: black;
+    color: white;
+}
+
+section+section+section>div {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+div.container h2 {
+    width: 100%;
+    font-size: 2.75em;
+    margin: 2em 0;
+    text-transform: uppercase;
+}
+
+div.container h2+ul {
+    text-align: start;
+    margin-bottom: 6em;
+}
+
+ul.quotes>li>span {
+    margin: 0;
+}
+
+span.quote {
+    display: block;
+    font-size: 6em;
+    line-height: 30%;
+}
+
+.quotes li {
+    display: flex;
+    flex-direction: column;
+}
+
+p+span {
+    align-self: end;
+}
+
+section#blog {
+    background-color: white;
+    color: white;
+}
+
+#blog div.container ul {
+    display: flex;
+    margin: 4em 0;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+#blog ul li img {
+    margin: 0;
+}
+
+#blog div.container ul li {
+    background: linear-gradient(to bottom, grey 95%, transparent 0);
+}
+
+#contact .container {
+    text-align: center;
+}
+
+#contact button {
+    background-color: white;
+    color: black;
+}
+
+#contact .container h2 {
+    margin-top: 2.5em;
+    margin-bottom: .25em;
+}
+
+footer .container {
+    flex-direction: column;
+    gap: 1em;
+    width: 700px;
+    text-align: center;
+}
+
+footer .container h4 {
+    margin-top: .25em;
+    font-size: 2em;
+}
+
+footer .container ul li {
+    font-weight: bold;
+}
+
+footer .container p {
+    margin-bottom: 1em;
+}
+
+
+/* 
+███╗   ███╗███████╗██████╗ ██╗ █████╗      ██████╗ ██╗   ██╗███████╗██████╗ ██╗███████╗███████╗
+████╗ ████║██╔════╝██╔══██╗██║██╔══██╗    ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║██╔════╝██╔════╝
+██╔████╔██║█████╗  ██║  ██║██║███████║    ██║   ██║██║   ██║█████╗  ██████╔╝██║█████╗  ███████╗
+██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║    ██║▄▄ ██║██║   ██║██╔══╝  ██╔══██╗██║██╔══╝  ╚════██║
+██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║    ╚██████╔╝╚██████╔╝███████╗██║  ██║██║███████╗███████║
+╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
+                                                                                                
+*/
+
+
+/* Mobile */
+
+@media only screen and (min-width: 0em) {}
+
+
+/* Tablet */
+
+@media only screen and (min-width: 48em) {}
+
+
+/* Small Desktop */
+
+@media only screen and (min-width: 64em) {}
+
+
+/* Large Desktop */
+
+@media only screen and (min-width: 1300px) {}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

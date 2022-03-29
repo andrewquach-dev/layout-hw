@@ -1,0 +1,269 @@
+/* Box Model Hack */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Clear fix hack */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/******************************************
+  /* BASE STYLES
+  /*******************************************/
+
+body {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/******************************************
+  /* LAYOUT
+  /*******************************************/
+
+.page__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page__header {
+    padding: 0 8em 8em;
+    background-image: url("../assets/images/header-bg.jpg");
+    background-size: 100%;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.nav__ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.75em;
+    list-style-type: none;
+}
+
+.nav__a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.header__h1 {
+    font-size: 7rem;
+    margin-bottom: .25em;
+}
+
+.header__input {
+    width: 36%;
+    padding: .75em;
+}
+
+.header__ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5em;
+    padding: 0;
+    margin-top: 2.75em;
+}
+
+.page__story {
+    padding: 5em 15em 10em 37em;
+    background-image: url("https://images.unsplash.com/photo-1514995669114-6081e934b693?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-repeat: no-repeat;
+    background-color: #f6f6f6;
+}
+
+.story__span {
+    color: darkorange;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.page__h2 {
+    font-size: 6rem;
+    margin: 0;
+}
+
+.page__p {
+    line-height: 1.5;
+}
+
+.page__span {
+    color: darkorange;
+    font-weight: bold;
+}
+
+.orders {
+    background-color: #eaf0f5;
+    display: grid;
+    place-items: center;
+    padding: 6em 0;
+}
+
+.categories {
+    display: flex;
+    list-style-type: none;
+}
+
+.categories__btn {
+    margin: 1.5em 0;
+    border: none;
+    background-color: #eaf0f5;
+    font-size: 1.5rem;
+    padding: 0 2em .75em 2em;
+    border-bottom: .15em solid darkgrey;
+}
+
+.categories__btn:hover {
+    color: darkorange;
+    border-bottom: .15em solid darkorange;
+}
+
+.orders__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    gap: 2.5em;
+    margin-bottom: 4em;
+}
+
+.info {
+    display: grid;
+    place-items: center;
+    padding: 6em 0;
+    row-gap: .5em;
+    background-color: #fdfdfd;
+}
+
+.info__i {
+    margin-top: 1.5em;
+    color: darkorange;
+}
+
+.info__small-text {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.info__phone-number {
+    color: darkorange;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.info__time {
+    font-weight: bold;
+}
+
+.info__pair {
+    display: flex;
+    gap: 12rem;
+}
+
+.info__hours {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews {
+    background-color: #eaf0f5;
+    display: grid;
+    place-items: center;
+    padding: 6em 0;
+}
+
+.reviews__img {
+    margin-top: 3em;
+}
+
+.reviews__name {
+    font-weight: 600;
+    font-size: 2em;
+    margin-top: .25em;
+}
+
+.reviews__job {
+    font-size: 1.25em;
+    color: dimgrey;
+    font-weight: bold;
+}
+
+.reviews__stars {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    color: darkorange;
+    gap: .25em;
+}
+
+.reviews__review {
+    width: 50%;
+    text-align: center;
+    font-style: italic;
+    line-height: 2em;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+.footer {
+    height: 200px;
+    background-color: hsl(193, 29%, 83%);
+    color: black;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+}
+
+.footer__ul {
+    font-size: 1.25rem;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    gap: 2em;
+}
+
+.footer__ul:first-child {
+    margin: 1em 0;
+}
+
+.footer__p {
+    font-size: 1.125rem;
+    color: dimgray;
+    margin-left: .75em;
+}
+
+.btn {
+    background-color: darkorange;
+    color: #eaf0f5;
+    border: none;
+    padding: 1em;
+    border-radius: .25em;
+}
+
+.span {
+    display: block;
+}

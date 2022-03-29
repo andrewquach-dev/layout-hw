@@ -1,0 +1,562 @@
+/* Box Model Hack */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Clear fix hack */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/******************************************
+  /* BASE STYLES
+  /*******************************************/
+
+body,
+html {
+    overflow-x: hidden;
+    position: relative;
+}
+
+body {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    display: block;
+}
+
+:root {
+    --primary: #eaa121;
+    --dark: #000;
+    --medium: #1b1b1b;
+    --light: #2e2e2e;
+}
+
+
+/******************************************
+  /* LAYOUT
+  /*******************************************/
+
+.page__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: block;
+}
+
+.container {
+    padding: 0 10px;
+    margin: auto;
+    width: 100%;
+    max-width: 95%;
+}
+
+.nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.page__nav {
+    height: 8vh;
+}
+
+.logo {
+    text-transform: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.nav__logo {}
+
+.nav__row {
+    margin: 0;
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    list-style-type: none;
+    padding: 15px 0 0 0;
+}
+
+.nav__list {
+    opacity: 0;
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.burger {
+    display: block;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav__link {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: .6em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+    background-repeat: no-repeat;
+    background-position: right 50% bottom 45%;
+    object-fit: cover;
+    object-position: bottom;
+    padding-bottom: 150px;
+}
+
+.hero__bot {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.hero__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2.5em;
+    text-align: center;
+}
+
+.hero__h1 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    letter-spacing: .4rem;
+    margin: 0;
+    word-spacing: .25em;
+}
+
+.hero__p {
+    margin-bottom: 2.25em;
+    margin-top: .5em;
+    font-family: 'Lora', serif;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.hero__span {
+    display: block;
+}
+
+i {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.hero__service {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: var(--dark);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 1em 1.5em;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    align-self: center;
+}
+
+.hero__btn {
+    font-family: 'Hind Madurai', sans-serif;
+    border: none;
+    background-color: none;
+}
+
+.hero__side-h4 {
+    font-size: 1rem;
+    font-family: 'Hind Madurai', sans-serif;
+    color: white;
+    letter-spacing: .1rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hero__coupon {
+    font-family: 'Hind Madurai', sans-serif;
+    background-color: var(--dark);
+    color: white;
+    width: 12em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.coupon__btn {
+    padding: 1.25em 1.5em;
+    text-transform: uppercase;
+    margin: 1.5em;
+    font-weight: bold;
+}
+
+.coupon__h5 {
+    border-left: 0.3em solid white;
+    padding: 1.5em 1.5em;
+    margin-bottom: 0;
+}
+
+.coupon__p {
+    word-spacing: .1em;
+    line-height: 2em;
+    text-transform: none;
+    margin: 0 0 0 1.25em;
+}
+
+.coupon__h2 {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin: 0 0 0 .75em;
+    text-transform: none;
+}
+
+.btn--circular {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.btn--white {
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+.hero__btn-pair {
+    display: none;
+    color: white;
+    bottom: 7em;
+    left: 75%;
+    position: absolute;
+}
+
+.skew {
+    position: relative;
+}
+
+.--skew-left {
+    height: 7em;
+    background-color: white;
+    transform: skewY(30deg);
+    margin-top: -1em;
+}
+
+.--skew-right {
+    background-color: white;
+    height: 7em;
+    transform: skewY(-30deg);
+    margin-top: -7em;
+}
+
+.services {
+    position: relative;
+}
+
+.services__row {
+    padding: 0;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    margin: 0;
+}
+
+.services__list {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+.services__h4 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: .75em 0 0 0;
+}
+
+.services__para {
+    text-transform: none;
+}
+
+.read-more {
+    background-color: #eeeeee;
+    padding: 50px 0;
+}
+
+.read-more__cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.read-more__h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+    margin: 0;
+}
+
+.read-more__img {
+    border: 6mm ridge var(--primary);
+    flex: 1;
+    width: 100%;
+}
+
+.read-more__left {
+    flex: 1;
+}
+
+.read-more__para {
+    text-transform: none;
+    margin: .75em 0 1em 0;
+}
+
+.stylists {
+    padding: 50px 0;
+}
+
+.stylists__row {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.stylists__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stylists__title {
+    background-color: black;
+    color: white;
+    padding: .75em 1.75em;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: bold;
+}
+
+.stylists__h5 {
+    text-transform: none;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.stylists__h6 {
+    margin: .5em 0 0 0;
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: none;
+}
+
+.coupon {
+    background-color: #dc941d;
+    color: white;
+}
+
+.coupon__cont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: .75em;
+    padding: 1em;
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+.coupon__h4 {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.coupon__h3 {
+    font-size: 1.5em;
+    text-transform: none;
+    margin: 0;
+}
+
+.coupon__span {
+    display: block;
+    font-size: .5em;
+    text-transform: none;
+}
+
+.lookbook {
+    display: flex;
+    flex-direction: column;
+    jusitfy-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.lookbook__h3 {
+    font-size: 1.5em;
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: bolder;
+}
+
+.lookbook__cont {
+    display: flex;
+}
+
+.lookbook__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.lookbook__rect {
+    width: 100%;
+}
+
+.lookbook__square {
+    width: 100%;
+}
+
+.footer {
+    height: 200px;
+    background-color: #EEEEEE;
+    color: black;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+.footer__ul {
+    font-size: 1rem;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    gap: 2em;
+    padding: 0;
+}
+
+.footer__p {
+    font-size: .75rem;
+    color: dimgray;
+    margin-left: .75em;
+}
+
+
+/******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+
+
+/*   
+  ███╗   ███╗███████╗██████╗ ██╗ █████╗      ██████╗ ██╗   ██╗███████╗██████╗ ██╗███████╗███████╗
+  ████╗ ████║██╔════╝██╔══██╗██║██╔══██╗    ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║██╔════╝██╔════╝
+  ██╔████╔██║█████╗  ██║  ██║██║███████║    ██║   ██║██║   ██║█████╗  ██████╔╝██║█████╗  ███████╗
+  ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║    ██║▄▄ ██║██║   ██║██╔══╝  ██╔══██╗██║██╔══╝  ╚════██║
+  ██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║    ╚██████╔╝╚██████╔╝███████╗██║  ██║██║███████╗███████║
+  ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
+                                                                                                 
+   */
+
+@media only screen and (min-width: 0) {}
+
+@media screen and (min-width: 540px) and (max-width: 767px) {}
+
+@media only screen and (min-wdith: 48em) {}
+
+@media only screen and (min-wdith: 64em) {}
+
+@media only screen and (min-wdith: 1300px) {}
